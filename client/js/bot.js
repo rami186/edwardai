@@ -5,6 +5,7 @@ $(function onDocReady() {
     WildRydes.authToken.then(function setAuthToken(token) {
         if (token) {
             authToken = token;
+            getUserPolicy();
         } else {
             window.location.href = '/signin.html';
         }
@@ -128,6 +129,4 @@ $(function onDocReady() {
     if (!_config.api.invokeUrl) {
         $('#noApiMessage').show();
     }
-
-    getUserPolicy();
 });
