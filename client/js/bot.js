@@ -6,7 +6,7 @@ $(function onDocReady() {
         if (token) {
             authToken = "token";
         } else {
-            authToken = "eyJraWQiOiJaVCtxTmNpQXNGMWlNUmUrdEZxQmJPWXF2VFY1dE81WklsRGY2a2N4VTFBPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJjMmE5ZWM0ZC1iZDQ1LTRjOTUtOGIxNC1jMTRmYjgxN2JlMGYiLCJhdWQiOiI1ZW5xZjB2cDg3NzY2aDRybjZjcTI0czg1NyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjFjNDBjMTczLTA0MmYtMTFlOC05NGM5LTc1YTU4MWNjNmEwMCIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTE3MTQ2MTAxLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl9sM2pxWTUzYmkiLCJjb2duaXRvOnVzZXJuYW1lIjoicnlhaGlhOTQtYXQtZ21haWwuY29tIiwiZXhwIjoxNTE3MTQ5NzAxLCJpYXQiOjE1MTcxNDYxMDIsImVtYWlsIjoicnlhaGlhOTRAZ21haWwuY29tIn0.H2aOyknUPPosB-fTrq15PAZl9p6GaMLhwAWkCsa8cXzwP6LfaJibRkJeGnjlhsqdFj1I_iDxMysb7Azq88HbYwtQsd9wQREVxgskL14fxF_2LPCbZTkegbWrtCx8d5lwKHyWBBuL53RHIbm_Bd4FjmRB5AomG0cokLqmpcQ7ncdXEGst4yG9roZUObn6ujth_mr7V4XtaN4QmABONOxGuD3ys4ci36snkYpLXTXaSlRs-HtQJxpMuEc15dZBvdermuzTOdYhb7bhXgNyHNpksx7dw3uLuIcU5iXS64Ijos8CjLWeFPQJfYUC503Qq3lRnsgs2fxA8_RA7Cx5lES2Ww";
+            authToken = "eyJraWQiOiJaVCtxt-whitemNpQXNGMWlNUmUrdEZxQmJPWXF2VFY1dE81WklsRGY2a2N4VTFBPSIsImFsZyI6IlJTMjU2In0.eyJzdWIiOiJjMmE5ZWM0ZC1iZDQ1LTRjOTUtOGIxNC1jMTRmYjgxN2JlMGYiLCJhdWQiOiI1ZW5xZjB2cDg3NzY2aDRybjZjcTI0czg1NyIsImVtYWlsX3ZlcmlmaWVkIjp0cnVlLCJldmVudF9pZCI6IjFjNDBjMTczLTA0MmYtMTFlOC05NGM5LTc1YTU4MWNjNmEwMCIsInRva2VuX3VzZSI6ImlkIiwiYXV0aF90aW1lIjoxNTE3MTQ2MTAxLCJpc3MiOiJodHRwczpcL1wvY29nbml0by1pZHAudXMtd2VzdC0yLmFtYXpvbmF3cy5jb21cL3VzLXdlc3QtMl9sM2pxWTUzYmkiLCJjb2duaXRvOnVzZXJuYW1lIjoicnlhaGlhOTQtYXQtZ21haWwuY29tIiwiZXhwIjoxNTE3MTQ5NzAxLCJpYXQiOjE1MTcxNDYxMDIsImVtYWlsIjoicnlhaGlhOTRAZ21haWwuY29tIn0.H2aOyknUPPosB-fTrq15PAZl9p6GaMLhwAWkCsa8cXzwP6LfaJibRkJeGnjlhsqdFj1I_iDxMysb7Azq88HbYwtQsd9wQREVxgskL14fxF_2LPCbZTkegbWrtCx8d5lwKHyWBBuL53RHIbm_Bd4FjmRB5AomG0cokLqmpcQ7ncdXEGst4yG9roZUObn6ujth_mr7V4XtaN4QmABONOxGuD3ys4ci36snkYpLXTXaSlRs-HtQJxpMuEc15dZBvdermuzTOdYhb7bhXgNyHNpksx7dw3uLuIcU5iXS64Ijos8CjLWeFPQJfYUC503Qq3lRnsgs2fxA8_RA7Cx5lES2Ww";
         }
     }).catch(function handleTokenError(error) {
         alert(error);
@@ -44,10 +44,10 @@ $(function onDocReady() {
         $('.policy').remove();
         $('.usage').remove();
 
-        chatsection.append("<div class='options policy'>Here's your insurance policy ("+ data.institution+"):</div>");
+        chatsection.append("<div class='options txt-white policy'>Here's your insurance policy ("+ data.institution+"):</div>");
         for (var property in data.policy) {
             if ((data.policy).hasOwnProperty(property)) {
-                chatsection.append("<div class='options policy'>You have "+data.policy[property]+"$ remaining for "+property+"</div>");
+                chatsection.append("<div class='options txt-white policy'>You have "+data.policy[property]+"$ remaining for "+property+"</div>");
             }
         }
     }
@@ -58,7 +58,7 @@ $(function onDocReady() {
         $('.usage').remove();
         $('.policy').remove();
 
-        chatsection.append("<div class='options usage'>Which service would you like to know more about?</div>");
+        chatsection.append("<div class='options txt-white usage'>Which service would you like to know more about?</div>");
         for (var property in data.policy) {
             if ((data.policy).hasOwnProperty(property)) {
                 chatsection.append("<button class='options usage " + property + "'>View " +property+" usage</div>");
@@ -81,7 +81,7 @@ $(function onDocReady() {
     function trigger_init_message() {
         chatsection = $('#chatsection');
 
-        chatsection.append("<div class='options'>What would you like to do?</div>");
+        chatsection.append("<div class='options txt-white'>What would you like to do?</div>");
         chatsection.append("<div class='options'><button id='viewinsurance'>View Insurance Policy</button><button id='viewusage'>View Usage</button></div>");
 
         $('#viewinsurance').on('click', showInsurangePolicy);
@@ -94,7 +94,7 @@ $(function onDocReady() {
         chatsection = $('#chatsection');
         data = JSON.parse($('#hidden_data').val());
 
-        chatsection.append("<div class='options usage massagedata'>You have "+data.policy['massage']+"$ remaining.</div>");
+        chatsection.append("<div class='options txt-white usage massagedata'>You have "+data.policy['massage']+"$ remaining.</div>");
     }
 
     function dental() {
@@ -103,7 +103,7 @@ $(function onDocReady() {
         chatsection = $('#chatsection');
         data = JSON.parse($('#hidden_data').val());
 
-        chatsection.append("<div class='options usage dentaldata'>You have "+data.policy['dental']+"$ remaining.</div>");
+        chatsection.append("<div class='options txt-white usage dentaldata'>You have "+data.policy['dental']+"$ remaining.</div>");
     }
 
     function physiotherapy() {
@@ -112,7 +112,7 @@ $(function onDocReady() {
         chatsection = $('#chatsection');
         data = JSON.parse($('#hidden_data').val());
 
-        chatsection.append("<div class='options usage physiotherapydata'>You have "+data.policy['physiotherapy']+"$ remaining.</div>");
+        chatsection.append("<div class='options txt-white usage physiotherapydata'>You have "+data.policy['physiotherapy']+"$ remaining.</div>");
     }
 
     function cleanServices() {
