@@ -28,6 +28,16 @@ body {
     line-height: 1.4;
 }
 
+.options{
+  font-size: 30px;
+}
+.txt-white{
+  color: white;
+}
+
+.massagedata{
+  color:white;
+}
 /*
  * Remove text-shadow in selection highlight: h5bp.com/i
  * These selection declarations have to be separate.

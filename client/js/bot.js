@@ -42,10 +42,10 @@ $(function onDocReady() {
         $('.policy').remove();
         $('.usage').remove();
 
-        chatsection.append("<div class='options policy'>Here's your insurance policy ("+ data.institution+"):</div>");
+        chatsection.append("<div class='options txt-white policy'>Here's your insurance policy ("+ data.institution+"):</div>");
         for (var property in data.policy) {
             if ((data.policy).hasOwnProperty(property)) {
-                chatsection.append("<div class='options policy'>You have "+data.policy[property]+"$ remaining for "+property+"</div>");
+                chatsection.append("<div class='options txt-white policy'>You have "+data.policy[property]+"$ remaining for "+property+"</div>");
             }
         }
     }
@@ -56,7 +56,7 @@ $(function onDocReady() {
         $('.usage').remove();
         $('.policy').remove();
 
-        chatsection.append("<div class='options usage'>Which service would you like to know more about?</div>");
+        chatsection.append("<div class='options txt-white usage'>Which service would you like to know more about?</div>");
         for (var property in data.policy) {
             if ((data.policy).hasOwnProperty(property)) {
                 chatsection.append("<button class='options usage " + property + "'>View " +property+" usage</div>");
@@ -79,7 +79,7 @@ $(function onDocReady() {
     function trigger_init_message() {
         chatsection = $('#chatsection');
 
-        chatsection.append("<div class='options'>What would you like to do?</div>");
+        chatsection.append("<div class='options txt-white'>What would you like to do?</div>");
         chatsection.append("<div class='options'><button id='viewinsurance'>View Insurance Policy</button><button id='viewusage'>View Usage</button></div>");
 
         $('#viewinsurance').on('click', showInsurangePolicy);
@@ -92,7 +92,7 @@ $(function onDocReady() {
         chatsection = $('#chatsection');
         data = JSON.parse($('#hidden_data').val());
 
-        chatsection.append("<div class='options usage massagedata'>You have "+data.policy['massage']+"$ remaining.</div>");
+        chatsection.append("<div class='options txt-white usage massagedata'>You have "+data.policy['massage']+"$ remaining.</div>");
     }
 
     function dental() {
@@ -101,7 +101,7 @@ $(function onDocReady() {
         chatsection = $('#chatsection');
         data = JSON.parse($('#hidden_data').val());
 
-        chatsection.append("<div class='options usage dentaldata'>You have "+data.policy['dental']+"$ remaining.</div>");
+        chatsection.append("<div class='options txt-white usage dentaldata'>You have "+data.policy['dental']+"$ remaining.</div>");
     }
 
     function physiotherapy() {
@@ -110,7 +110,7 @@ $(function onDocReady() {
         chatsection = $('#chatsection');
         data = JSON.parse($('#hidden_data').val());
 
-        chatsection.append("<div class='options usage physiotherapydata'>You have "+data.policy['physiotherapy']+"$ remaining.</div>");
+        chatsection.append("<div class='options txt-white usage physiotherapydata'>You have "+data.policy['physiotherapy']+"$ remaining.</div>");
     }
 
     function cleanServices() {
