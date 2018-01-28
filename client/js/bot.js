@@ -1,6 +1,6 @@
 // Register click handler for #request button
 $(function onDocReady() {
-    $('#universityForm').submit(selectPolicy);
+    $('#universityForm').submit(sendRequest);
 
     var authToken;
     WildRydes.authToken.then(function setAuthToken(token) {
@@ -14,18 +14,13 @@ $(function onDocReady() {
         window.location.href = '/signin.html';
     });
 
-    function selectPolicy() {
-        policyNumber = $('#select-policy').val();
-
+    function getUserPolicy() {
         $.ajax({
-            method: 'POST',
-            url: _config.api.invokeUrl + '/addpolicy',
+            method: 'GET',
+            url: _config.api.invokeUrl + '/getuserpolicy',
             headers: {
                 Authorization: authToken
             },
-            data: JSON.stringify({
-                PolicyId: policyNumber
-            }),
             contentType: 'application/json',
             success: completeRequest,
             error: function ajaxError(jqXHR, textStatus, errorThrown) {
@@ -36,11 +31,14 @@ $(function onDocReady() {
         });
     }
 
-    function completeRequest() {
-        window.location.href = '/bot.html';
+    function completeRequest(data) {
+        console.log(data);
+        $('#hidden_data').val(data)
     }
 
     if (!_config.api.invokeUrl) {
         $('#noApiMessage').show();
     }
+
+    getUserPolicy();
 });
