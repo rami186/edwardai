@@ -39,7 +39,7 @@ $(function onDocReady() {
 
     function showInsurangePolicy() {
         chatsection = $('#chatsection');
-        data = JSON.parse($('#hidden_data').val());
+        data = $('#hidden_data').val();
         $('.policy').remove();
         $('.usage').remove();
 
@@ -53,7 +53,7 @@ $(function onDocReady() {
 
     function showUsageOption() {
         chatsection = $('#chatsection');
-        data = JSON.parse($('#hidden_data').val());
+        data = $('#hidden_data').val();
         $('.usage').remove();
         $('.policy').remove();
 
@@ -91,7 +91,7 @@ $(function onDocReady() {
         cleanServices();
 
         chatsection = $('#chatsection');
-        data = JSON.parse($('#hidden_data').val());
+        data = $('#hidden_data').val();
 
         chatsection.append("<div class='options txt-white usage massagedata'>You have "+data.policy['massage']+"$ remaining.</div>");
     }
@@ -100,7 +100,7 @@ $(function onDocReady() {
         cleanServices();
 
         chatsection = $('#chatsection');
-        data = JSON.parse($('#hidden_data').val());
+        data = $('#hidden_data').val();
 
         chatsection.append("<div class='options txt-white usage dentaldata'>You have "+data.policy['dental']+"$ remaining.</div>");
     }
@@ -109,13 +109,13 @@ $(function onDocReady() {
         cleanServices();
 
         chatsection = $('#chatsection');
-        data = JSON.parse($('#hidden_data').val());
+        data = $('#hidden_data').val();
 
         chatsection.append("<div class='options txt-white usage physiotherapydata'>You have "+data.policy['physiotherapy']+"$ remaining.</div>");
     }
 
     function cleanServices() {
-        data = JSON.parse($('#hidden_data').val());
+        data = $('#hidden_data').val();
 
         for (var property in data.policy) {
             if ((data.policy).hasOwnProperty(property)) {
