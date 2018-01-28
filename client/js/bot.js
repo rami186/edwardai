@@ -42,6 +42,7 @@ $(function onDocReady() {
         chatsection = $('#chatsection');
         data = JSON.parse($('#hidden_data').val());
         $('.policy').remove();
+        $('.usage').remove();
 
         chatsection.append("<div class='options policy'>Here's your insurance policy ("+ data.institution+"):</div>");
         for (var property in data.policy) {
@@ -55,6 +56,7 @@ $(function onDocReady() {
         chatsection = $('#chatsection');
         data = JSON.parse($('#hidden_data').val());
         $('.usage').remove();
+        $('.policy').remove();
 
         chatsection.append("<div class='options usage'>Which service would you like to know more about?</div>");
         for (var property in data.policy) {
